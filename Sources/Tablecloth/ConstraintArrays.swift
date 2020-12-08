@@ -35,8 +35,8 @@ extension Array where Element == Constraint {
     [
       equal(\.topAnchor).constant(insets.top),
       equal(\.leadingAnchor).constant(insets.leading),
-      equal(\.bottomAnchor).constant(insets.bottom),
-      equal(\.trailingAnchor).constant(insets.trailing),
+      equal(\.bottomAnchor).constant(-insets.bottom),
+      equal(\.trailingAnchor).constant(-insets.trailing),
     ]
   }
 
