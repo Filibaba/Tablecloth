@@ -80,7 +80,7 @@ public struct Constraint {
   public func with(_ closure: @escaping (NSLayoutConstraint) -> Void) -> Constraint {
     var copy = self
     copy.postProcessor = closure
-    return coy
+    return copy
   }
 }
 
