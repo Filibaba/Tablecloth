@@ -13,6 +13,7 @@ extension Array where Element == Constraint {
       if let priority = constraint.priority {
         layoutConstraint.priority = priority
       }
+      constraint.postProcessor?(layoutConstraint)
     }
   }
 

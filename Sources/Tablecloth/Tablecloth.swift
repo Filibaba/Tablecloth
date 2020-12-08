@@ -20,6 +20,8 @@ public struct Constraint {
   /// The constraint builder.
   internal let constraint: Builder
 
+  internal var postProcessor: ((NSLayoutConstraint) -> Void)?
+
   /// The constant to pass to the constraint builder.
   internal var constant: CGFloat = 0
 
@@ -73,6 +75,12 @@ public struct Constraint {
     var copy = self
     copy.priority = priority
     return copy
+  }
+
+  public func with(_ closure: @escaping (NSLayoutConstraint) -> Void) -> Constraint {
+    var copy = self
+    copy.postProcessor = closure
+    return coy
   }
 }
 
