@@ -12,23 +12,23 @@ height and centers the `imageView` vertically.
 
 ```swift
 view.addSubview(imageView) {
-  .equal(\.leadingAnchor, \.layoutMarginsGuide.leadingAnchor)
-  .equal(\.heightAnchor)
-  .equal(\.centerYAnchor)
+  equal(\.leadingAnchor, \.layoutMarginsGuide.leadingAnchor)
+  equal(\.heightAnchor)
+  equal(\.centerYAnchor)
 }
 ```
 
 Or you can add a view and make it fill its superview.
 
 ```swift
-view.addSubview(scrollView, constraints: .sameFrame)
+view.addSubview(scrollView, constraints: .toFrame)
 ```
 
 You can also constrain a view to other view's in the view hierarchy.
 
 ```swift
 view.addSubview(label) {
-  .equal(\.leadingAnchor, \.trailingAnchor, of: firstLabel).constant(16)
+  equal(\.leadingAnchor, \.trailingAnchor, of: firstLabel).constant(16)
 }
 ```
 
