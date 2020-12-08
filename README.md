@@ -34,11 +34,19 @@ view.addSubview(label) {
 
 The modifiers `.constant()` and `.multiplier()` and `.priority()` can be used to modify a constraint's properties.
 
+If you need to do something with an actual `NSLayoutConstraint` after it's been created, like storing a reference to it, you can use the
+`.with()` modifier.
+
+```swift
+titleLabel.configureConstraints {
+  equal(\.widthAnchor, of: stackView).constant(-16).with { widthConstraint = $0 }
+}
+```
+
 ## On Production Readyness
 
 This code has been used with great success in [Plantry](https://www.plantry.app/) for years. It does however not contain everything
-required to build any layout imaginable.  Sometimes you need to keep a reference to a constraint and this is not currently possible
-and have to be handled the good ol' way.
+required to build any layout imaginable. 
 
 ## License
 
