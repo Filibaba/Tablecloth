@@ -17,12 +17,12 @@ extension Array where Element == Constraint {
   }
 
   /// A list of constraints that constrain a view to another view's edge anchors.
-  public static var sameFrame: [Constraint] {
+  public static var toFrame: [Constraint] {
     [
-      .equal(\.topAnchor),
-      .equal(\.leadingAnchor),
-      .equal(\.bottomAnchor),
-      .equal(\.trailingAnchor),
+      equal(\.topAnchor),
+      equal(\.leadingAnchor),
+      equal(\.bottomAnchor),
+      equal(\.trailingAnchor),
     ]
   }
 
@@ -31,22 +31,22 @@ extension Array where Element == Constraint {
   /// - Parameter insets: Insets the view by the given amount.
   ///
   /// - Returns: A list of constraints that constrain a view to another view's edge anchors.
-  public static func sameFrame(insets: NSDirectionalEdgeInsets = .zero) -> [Constraint] {
+  public static func toFrame(insets: NSDirectionalEdgeInsets = .zero) -> [Constraint] {
     [
-      Constraint.equal(\.topAnchor).constant(insets.top),
-      Constraint.equal(\.leadingAnchor).constant(insets.leading),
-      Constraint.equal(\.bottomAnchor).constant(insets.bottom),
-      Constraint.equal(\.trailingAnchor).constant(insets.trailing),
+      equal(\.topAnchor).constant(insets.top),
+      equal(\.leadingAnchor).constant(insets.leading),
+      equal(\.bottomAnchor).constant(insets.bottom),
+      equal(\.trailingAnchor).constant(insets.trailing),
     ]
   }
 
   /// Constraints that constrain the view to its super view's layout margins.
   public static var toLayoutMargins: [Constraint] {
     [
-      .equal(\.topAnchor, \.layoutMarginsGuide.topAnchor),
-      .equal(\.trailingAnchor, \.layoutMarginsGuide.trailingAnchor),
-      .equal(\.bottomAnchor, \.layoutMarginsGuide.bottomAnchor),
-      .equal(\.leadingAnchor, \.layoutMarginsGuide.leadingAnchor),
+      equal(\.topAnchor, \.layoutMarginsGuide.topAnchor),
+      equal(\.trailingAnchor, \.layoutMarginsGuide.trailingAnchor),
+      equal(\.bottomAnchor, \.layoutMarginsGuide.bottomAnchor),
+      equal(\.leadingAnchor, \.layoutMarginsGuide.leadingAnchor),
     ]
   }
 
@@ -57,10 +57,10 @@ extension Array where Element == Constraint {
   /// - Returns: A list of constraints.
   public static func toContentLayoutGuides(of scrollView: UIScrollView) -> [Constraint] {
     [
-      .equal(\.topAnchor, \.contentLayoutGuide.topAnchor, otherView: scrollView),
-      .equal(\.bottomAnchor, \.contentLayoutGuide.bottomAnchor, otherView: scrollView),
-      .equal(\.leadingAnchor, \.contentLayoutGuide.leadingAnchor, otherView: scrollView),
-      .equal(\.trailingAnchor, \.contentLayoutGuide.trailingAnchor, otherView: scrollView)
+      equal(\.topAnchor, \.contentLayoutGuide.topAnchor, otherView: scrollView),
+      equal(\.bottomAnchor, \.contentLayoutGuide.bottomAnchor, otherView: scrollView),
+      equal(\.leadingAnchor, \.contentLayoutGuide.leadingAnchor, otherView: scrollView),
+      equal(\.trailingAnchor, \.contentLayoutGuide.trailingAnchor, otherView: scrollView)
     ]
   }
 
@@ -71,10 +71,10 @@ extension Array where Element == Constraint {
   /// - Returns: A list of constraints.
   public static func toFrameLayoutGuides(of scrollView: UIScrollView) -> [Constraint] {
     [
-      .equal(\.topAnchor, \.frameLayoutGuide.topAnchor, otherView: scrollView),
-      .equal(\.bottomAnchor, \.frameLayoutGuide.bottomAnchor, otherView: scrollView),
-      .equal(\.leadingAnchor, \.frameLayoutGuide.leadingAnchor, otherView: scrollView),
-      .equal(\.trailingAnchor, \.frameLayoutGuide.trailingAnchor, otherView: scrollView),
+      equal(\.topAnchor, \.frameLayoutGuide.topAnchor, otherView: scrollView),
+      equal(\.bottomAnchor, \.frameLayoutGuide.bottomAnchor, otherView: scrollView),
+      equal(\.leadingAnchor, \.frameLayoutGuide.leadingAnchor, otherView: scrollView),
+      equal(\.trailingAnchor, \.frameLayoutGuide.trailingAnchor, otherView: scrollView),
     ]
   }
 }
