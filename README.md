@@ -18,7 +18,7 @@ view.addSubview(imageView) {
 }
 ```
 
-Or you can add a view and make it fill it's superview.
+Or you can add a view and make it fill its superview.
 
 ```swift
 view.addSubview(scrollView, constraints: .sameFrame)
