@@ -43,6 +43,11 @@ titleLabel.configureConstraints {
 }
 ```
 
+## Documentation
+
+All of the code is fairly well documented, albeit probably riddled with copy-paste errors. Checkout `Tablecloth.swift` and
+`View.swift` for the most relevant bits.
+
 ## On Production Readyness
 
 This code has been used with great success in [Plantry](https://www.plantry.app/) for years. It does however not contain everything
